@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>رمضان مبارك 2026</title>
+    <link rel="icon" type="image/png" href="2.png">
+    <style>
+        :root {
+            --ramadan-gold: #d4af37;
+            --ramadan-dark: #1a1a2e;
+            --ramadan-purple: #4a148c;
+            --bg-color: #0f0c29;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to bottom, #24243e, #302b63, #0f0c29);
+            direction: rtl;
+            padding: 20px;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        /* تأثير الزخرفة الإسلامية */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('https://www.transparenttextures.com/patterns/arabesque.png');
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: rgba(255, 255, 255, 0.98);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            border: 2px solid var(--ramadan-gold);
+        }
+        
+        .header {
+            background: var(--ramadan-dark);
+            color: var(--ramadan-gold);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid var(--ramadan-gold);
+        }
+
+         @font-face {
+
+            font-family: "Thuluth";
+
+            src: url("fonts/Thuluth.ttf") format("truetype");
+
+        }
+
+
+
+        .rm {
+
+            font-family: "Thuluth", serif;
+
+            font-size: 64px;
+
+            direction: rtl;
+
+        }
+
+        .rm {
+            font-size: 60px;
+            margin-bottom: 15px;
+            display: block;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
+        }
+        
+        .header p {
+            font-size: 1.5em;
+            color: #fff;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .dua-category {
+            margin-bottom: 45px;
+        }
+        
+        .category-title {
+            background: linear-gradient(90deg, var(--ramadan-purple), #6a1b9a);
+            color: var(--ramadan-gold);
+            padding: 15px 30px;
+            border-radius: 50px 0 50px 0;
+            margin-bottom: 25px;
+            font-size: 1.5em;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-right: 10px solid var(--ramadan-gold);
+        }
+        
+        .dua-item {
+            background: #fdfbff;
+            border: 1px solid #eee;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            line-height: 1.8;
+            font-size: 1.15em;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        
+        .dua-item:hover {
+            transform: translateX(-10px);
+            background: #fffef0;
+            border-color: var(--ramadan-gold);
+        }
+        
+        .dua-number {
+            background: var(--ramadan-gold);
+            color: var(--ramadan-dark);
+            min-width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: var(--ramadan-dark);
+            padding: 30px;
+            text-align: center;
+            color: var(--ramadan-gold);
+            border-top: 2px solid var(--ramadan-gold);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+            .header {
+                padding: 30px 10px;
+            }
+            .category-title {
+                font-size: 1.1em;
+                padding: 10px 15px;
+                border-radius: 25px 0 25px 0;
+            }
+            .dua-item {
+                padding: 12px;
+            }
+            .dua-number {
+                min-width: 25px;
+                height: 25px;
+                font-size: 0.8em;
+                margin-left: 10px;
+            }
+        }
+
+        /* للشاشات المتوسطة (الأجهزة اللوحية/التابلت) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        /* واجهة البدء لتفعيل الصوت */
+        #start-screen {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: var(--ramadan-dark);
+            color: var(--ramadan-gold);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .start-btn {
+            background: var(--ramadan-gold);
+            color: var(--ramadan-dark);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            border: none;
+        }
+
+        .audio-controls {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--ramadan-gold);
+            padding: 12px;
+            border-radius: 50px;
+            z-index: 1000;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="start-screen" onclick="initPage()">
+        <div style="font-size: 80px;">🌙</div>
+        <h1 style="font-size: 2em; margin-top: 20px;">رمضان مبارك 2026</h1>
+        <button class="start-btn">دخول وقراءة الأدعية</button>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <span class="rm">رمضان مبارك</span>
+            <p>55 دعاءً مستجاباً بإذن الله لشهر الخير</p>
+        </div>
+        
+        <div class="content">
+            <div class="dua-category">
+                <div class="category-title">أدعية عامة في رمضان</div>
+                <div class="dua-item"><span class="dua-number">1</span>اللهم بلغنا رمضان وبارك لنا فيه وتقبّل منا صيامه وقيامه.</div>
+                <div class="dua-item"><span class="dua-number">2</span>اللهم أعنا فيه على الصيام والقيام وغضّ البصر وحفظ اللسان.</div>
+                <div class="dua-item"><span class="dua-number">3</span>اللهم اجعل رمضان شهر خير وبركة ومغفرة علينا وعلى أمة محمد ﷺ.</div>
+                <div class="dua-item"><span class="dua-number">4</span>اللهم اجعلنا فيه من عتقائك من النار.</div>
+                <div class="dua-item"><span class="dua-number">5</span>اللهم تقبّل منا صالح الأعمال ولا تردّ لنا دعاءً.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية المغفرة والتوبة</div>
+                <div class="dua-item"><span class="dua-number">6</span>اللهم اغفر لنا ذنوبنا كلها دقّها وجلّها، أولها وآخرها.</div>
+                <div class="dua-item"><span class="dua-number">7</span>اللهم إنك عفو تحب العفو فاعفُ عنا.</div>
+                <div class="dua-item"><span class="dua-number">8</span>اللهم تب علينا توبة نصوحًا قبل الموت.</div>
+                <div class="dua-item"><span class="dua-number">9</span>اللهم طهّر قلوبنا من النفاق وأعمالنا من الرياء.</div>
+                <div class="dua-item"><span class="dua-number">10</span>اللهم اغسلنا من الخطايا كما يُغسل الثوب الأبيض من الدنس.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية الرحمة</div>
+                <div class="dua-item"><span class="dua-number">11</span>اللهم ارحمنا برحمتك الواسعة.</div>
+                <div class="dua-item"><span class="dua-number">12</span>اللهم اجعلنا من المرحومين لا من المحرومين.</div>
+                <div class="dua-item"><span class="dua-number">13</span>اللهم ارحم موتانا وموتى المسلمين.</div>
+                <div class="dua-item"><span class="dua-number">14</span>اللهم أدخلنا برحمتك في عبادك الصالحين.</div>
+                <div class="dua-item"><span class="dua-number">15</span>اللهم شملنا بعفوك ولطفك ورأفتك.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية القبول</div>
+                <div class="dua-item"><span class="dua-number">16</span>اللهم تقبّل صيامنا وقيامنا وقراءتنا للقرآن.</div>
+                <div class="dua-item"><span class="dua-number">17</span>اللهم اجعل أعمالنا خالصة لوجهك الكريم.</div>
+                <div class="dua-item"><span class="dua-number">18</span>اللهم لا تجعل في أعمالنا حظًا للرياء.</div>
+                <div class="dua-item"><span class="dua-number">19</span>اللهم ارفع درجاتنا وتقبّل حسناتنا.</div>
+                <div class="dua-item"><span class="dua-number">20</span>اللهم اجعل آخر أعمالنا في رمضان مقبولة.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية الهداية والثبات</div>
+                <div class="dua-item"><span class="dua-number">21</span>اللهم اهدنا الصراط المستقيم.</div>
+                <div class="dua-item"><span class="dua-number">22</span>اللهم ثبّت قلوبنا على دينك.</div>
+                <div class="dua-item"><span class="dua-number">23</span>اللهم زدنا إيمانًا ويقينًا.</div>
+                <div class="dua-item"><span class="dua-number">24</span>اللهم حبّب إلينا الطاعة وكرّه إلينا المعصية.</div>
+                <div class="dua-item"><span class="dua-number">25</span>اللهم اجعلنا من عبادك المهتدين.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية الفرج وتيسير الأمور</div>
+                <div class="dua-item"><span class="dua-number">26</span>اللهم فرّج همّ المهمومين من المسلمين.</div>
+                <div class="dua-item"><span class="dua-number">27</span>اللهم اقضِ حوائجنا وحوائج السائلين.</div>
+                <div class="dua-item"><span class="dua-number">28</span>اللهم يسّر أمورنا واكتب لنا الخير حيث كان.</div>
+                <div class="dua-item"><span class="dua-number">29</span>اللهم اكشف الكرب وادفع البلاء.</div>
+                <div class="dua-item"><span class="dua-number">30</span>اللهم ارزقنا الفرج القريب.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية الرزق</div>
+                <div class="dua-item"><span class="dua-number">31</span>اللهم ارزقنا رزقًا حلالًا طيبًا واسعًا.</div>
+                <div class="dua-item"><span class="dua-number">32</span>اللهم بارك لنا فيما رزقتنا.</div>
+                <div class="dua-item"><span class="dua-number">33</span>اللهم اكفنا بحلالك عن حرامك.</div>
+                <div class="dua-item"><span class="dua-number">34</span>اللهم اغننا بفضلك عمّن سواك.</div>
+                <div class="dua-item"><span class="dua-number">35</span>اللهم افتح لنا أبواب الرزق والخير.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية الصحة والعافية</div>
+                <div class="dua-item"><span class="dua-number">36</span>اللهم اشفِ مرضانا ومرضى المسلمين.</div>
+                <div class="dua-item"><span class="dua-number">37</span>اللهم عافنا في أبداننا وأسماعنا وأبصارنا.</div>
+                <div class="dua-item"><span class="dua-number">38</span>اللهم ألبسنا لباس الصحة والعافية.</div>
+                <div class="dua-item"><span class="dua-number">39</span>اللهم ادفع عنا الأسقام والأوجاع.</div>
+                <div class="dua-item"><span class="dua-number">40</span>اللهم احفظنا من كل سوء.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية للأهل والذرية</div>
+                <div class="dua-item"><span class="dua-number">41</span>اللهم احفظ أهلنا وأحبابنا.</div>
+                <div class="dua-item"><span class="dua-number">42</span>اللهم أصلح أبناءنا وبناتنا.</div>
+                <div class="dua-item"><span class="dua-number">43</span>اللهم اجعل بيوتنا عامرة بطاعتك.</div>
+                <div class="dua-item"><span class="dua-number">44</span>اللهم قرّ أعيننا بصلاح ذريتنا.</div>
+                <div class="dua-item"><span class="dua-number">45</span>اللهم اجمعنا بأهلنا في خير.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية للأمة الإسلامية</div>
+                <div class="dua-item"><span class="dua-number">46</span>اللهم انصر الإسلام وأعزّ المسلمين.</div>
+                <div class="dua-item"><span class="dua-number">47</span>اللهم وحّد صفوف المسلمين.</div>
+                <div class="dua-item"><span class="dua-number">48</span>اللهم ارفع الظلم عن المظلومين.</div>
+                <div class="dua-item"><span class="dua-number">49</span>اللهم فرّج عن المستضعفين في كل مكان.</div>
+                <div class="dua-item"><span class="dua-number">50</span>اللهم أصلح أحوال الأمة وردّها إليك ردًا جميلًا.</div>
+            </div>
+
+            <div class="dua-category">
+                <div class="category-title">أدعية ختام رمضان</div>
+                <div class="dua-item"><span class="dua-number">51</span>اللهم لا تجعل هذا رمضان آخر عهدنا به.</div>
+                <div class="dua-item"><span class="dua-number">52</span>اللهم تقبّل منا ما مضى واكتب لنا خير ما بقي.</div>
+                <div class="dua-item"><span class="dua-number">53</span>اللهم اجعلنا بعد رمضان أفضل حالًا.</div>
+                <div class="dua-item"><span class="dua-number">54</span>اللهم ثبّت طاعتنا بعد انقضائه.</div>
+                <div class="dua-item"><span class="dua-number">55</span>اللهم اختم لنا رمضان برضاك والعتق من النار.</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>تقبل الله منا ومنكم صالح الأعمال - رمضان 2026</p>
+        </div>
+        <div class="footer">
+            <p>
+                جميع الحقوق محفوظة © 2026 Mohamed Ahmed Helmy Aboura
+            </p>
+        </div>
+    </div>
+
+    <div class="audio-controls" onclick="toggleAudio()" title="تشغيل/إيقاف الصوت">
+        <span id="audio-icon">🔊</span>
+        <audio id="bg-audio" src="1.mp3" loop></audio>
+    </div>
+
+    <script>
+        const audio = document.getElementById('bg-audio');
+        const startScreen = document.getElementById('start-screen');
+        const audioIcon = document.getElementById('audio-icon');
+
+        function initPage() {
+            audio.play();
+            startScreen.style.display = 'none';
+        }
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                audioIcon.innerText = "🔊";
+            } else {
+                audio.pause();
+                audioIcon.innerText = "🔇";
+            }
+        }
+    </script>
+</body>
+</html>
